@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Night 1</title>
+    <link rel="icon" href="Menu/Assets/icon.png">
+    <link rel="stylesheet" href="Code/main.css">
+    <link rel="stylesheet" href="Code/style.css">
+    <link rel="stylesheet" href="Code/cameras.css">
+    <link rel="stylesheet" href="Code/menu.css">
+</head>
+<body bgcolor="black" onload="fadeIn();">
+    <img draggable="false" src="../Assets/fade.png" id="-fade_in">
+    <div class="-container">
+        <div id="-FOV">
+            <div id="-menu">
+
+                <div id="-warning">
+                    <img class="-warning_msg" draggable="false" src="Data/Assets/Menu/warning.png"><br>
+
+                    <input id="-load" type="button">
+                </div>
+
+                <span name="menu_blur">
+                    <img class="-menu_mask" draggable="false" src="Data/Assets/Menu/mask.png">
+                    <button name="menu_pan" id="-menu_left" style="left:45px;bottom:50px;right:auto;">
+                        <img draggable="false" src="Data/Assets/pan_left.png">
+                    </button>
+
+                    <img class="-night" draggable="false" src="Data/Assets/Menu/time.png">
+                    <img id="-play" draggable="false" src="Data/Assets/Menu/start.png" onclick="loadJS(['main.js','cameras.js','toggles.js','toy_bonnie.js','toy_chica.js','toy_freddy.js']);">
+
+                    <button name="menu_pan" id="-menu_right" style="left:auto;bottom:50px;right:45px;">
+                        <img draggable="false" src="Data/Assets/pan_right.png">
+                    </button>
+
+                    <div id="-menu_bg">
+                        <img class="-characters" draggable="false" src="Data/Assets/Menu/bonnie.png" style="right:-150px;left:auto;">
+                        <img class="-characters" draggable="false" src="Data/Assets/Menu/chica.png" style="right:auto;left:-150px;">
+                    </div>
+                </span>
+            </div>
+            <div id="-tablet">
+                <img draggable="false" class="-hints" style="right:auto;left:180px;top:355px;" src="Data/Assets/desk_hint.png">
+                <img draggable="false" class="-hints" style="right:auto;left:30px;top:175px;" src="Data/Assets/upward_hint.png">
+                <img draggable="false" class="-hints" style="right:135px;left:auto;top:200px;" src="Data/Assets/gameplay_hint.png">
+                <img draggable="false" id="-battery_meter" class="-battery" style="top:20px;" src="Data/Assets/battery_1.png">
+                <img id="-cam_bg" draggable="false" src="Data/Assets/Cams/09.png">
+                <img id="-static" draggable="false" src="Data/Assets/static.png">
+                <img class="-outline" draggable="false" src="Data/Assets/outline.png">
+                <img draggable="false" src="Data/Assets/map.png">
+
+                <button alt="not_panning" id="01" style="right:430px;bottom:200px;"
+                onclick="currentCam='01';cameraEffects();animatronicMovement();snd_camera_switch.play();cameraTabletDefault = 0;getEle('-cam_bg').style.right = `${cameraTabletDefault}%`;">
+                    <img draggable="false" src="Data/Assets/01.png">
+                </button>
+
+                <button alt="not_panning" id="02" style="right:285px;bottom:200px;"
+                onclick="currentCam='02';cameraEffects();animatronicMovement();snd_camera_switch.play();cameraTabletDefault = 0;getEle('-cam_bg').style.right = `${cameraTabletDefault}%`;">
+                    <img draggable="false" src="Data/Assets/02.png">
+                </button>
+
+                <button alt="not_panning" id="03" style="right:430px;bottom:270px;"
+                onclick="currentCam='03';cameraEffects();animatronicMovement();snd_camera_switch.play();cameraTabletDefault = 0;getEle('-cam_bg').style.right = `${cameraTabletDefault}%`;">
+                    <img draggable="false" src="Data/Assets/03.png">
+                </button>
+
+                <button alt="not_panning" id="04" style="right:285px;bottom:270px;"
+                onclick="currentCam='04';cameraEffects();animatronicMovement();snd_camera_switch.play();cameraTabletDefault = 0;getEle('-cam_bg').style.right = `${cameraTabletDefault}%`;">
+                    <img draggable="false" src="Data/Assets/04.png">
+                </button>
+
+                <button alt="not_panning" id="05" style="right:430px;bottom:100px;"
+                onclick="currentCam='05';cameraEffects();animatronicMovement();snd_camera_switch.play();cameraTabletDefault = 0;getEle('-cam_bg').style.right = `${cameraTabletDefault}%`;">
+                    <img draggable="false" src="Data/Assets/05.png">
+                </button>
+
+                <button alt="not_panning" id="06" style="right:285px;bottom:100px;"
+                onclick="currentCam='06';cameraEffects();animatronicMovement();snd_camera_switch.play();cameraTabletDefault = 0;getEle('-cam_bg').style.right = `${cameraTabletDefault}%`;">
+                    <img draggable="false" src="Data/Assets/06.png">
+                </button>
+
+                <button alt="panning" id="07" style="right:250px;bottom:350px;"
+                onclick="currentCam='07';cameraEffects();animatronicMovement();snd_camera_switch.play();">
+                    <img draggable="false" src="Data/Assets/07.png">
+                </button>
+
+                <button alt="panning" id="08" style="right:430px;bottom:370px;"
+                onclick="currentCam='08';cameraEffects();animatronicMovement();snd_camera_switch.play();">
+                    <img draggable="false" src="Data/Assets/08.png">
+                </button>
+
+                <button alt="panning" id="09" style="right:70px;bottom:390px;"
+                onclick="currentCam='09';cameraEffects();animatronicMovement();snd_camera_switch.play();">
+                    <img draggable="false" src="Data/Assets/09.png">
+                </button>
+
+                <button alt="panning" id="10" style="right:140px;bottom:250px;"
+                onclick="currentCam='10';cameraEffects();animatronicMovement();snd_camera_switch.play();">
+                    <img draggable="false" src="Data/Assets/10.png">
+                </button>
+
+                <button alt="panning" id="11" style="right:35px;bottom:300px;"
+                onclick="currentCam='11';cameraEffects();animatronicMovement();snd_camera_switch.play();">
+                    <img draggable="false" src="Data/Assets/11.png">
+                </button>
+
+                <button alt="panning" id="12" style="right:55px;bottom:190px;"
+                onclick="currentCam='12';cameraEffects();animatronicMovement();snd_camera_switch.play();">
+                    <img draggable="false" src="Data/Assets/12.png">
+                </button>
+
+                <button name="movement" id="-cam_left" style="left:35px;bottom:50px;">
+                    <img draggable="false" src="Data/Assets/pan_left.png">
+                </button>
+
+                <button name="movement" id="-cam_right" style="left:265px;bottom:50px;">
+                    <img draggable="false" src="Data/Assets/pan_right.png">
+                </button>
+
+                <button name="cam_flashlight" id="-cam_flash">
+                    <img draggable="false" src="Data/Assets/flashlight.png">
+                </button>
+
+            </div>
+
+            <span> <!-- Przyciski Maska/Kamera -->
+                <img draggable="false" class="-hints" style="right:auto;left:180px;top:585px;" src="Data/Assets/gameplay_hint.png">
+                <img draggable="false" class="-hints" style="right:180px;left:auto;top:585px;" src="Data/Assets/gameplay_hint.png">
+                <img draggable="false" style="left:20px;" id="-mask-btn" class="-buttons" src="Data/Assets/mask_button.png"
+                onclick="maskToggle();">
+                <img draggable="false" style="right:20px;" id="-camera-btn" class="-buttons" src="Data/Assets/camera_button.png"
+                onclick="camerasToggle();">
+            </span>
+
+            <span> <!-- Hitboxy Kamery -->
+                <div id="-left" class="-camera_mve"></div>
+                <div id="-right" class="-camera_mve" style="right:0px;"></div>
+            </span>
+
+            <img draggable="false" id="-cameras" src="Data/Assets/camera_on_anim.png">
+            <img draggable="false" id="-mask" src="Data/Assets/mask_on_anim.png">
+
+            <img draggable="false" id="-death" src="Data/Assets/death_screen.png">
+            <img draggable="false" id="-death_overlay" src="Data/Assets/game_over_overlay.png">
+            <img draggable="false" id="-game_over" src="Data/Assets/game_over.png">
+
+            <button id="-hints_tggl">
+                <img draggable="false" src="Data/Assets/hints.png" onclick="disableHints();">
+            </button>
+
+            <div id="-camera">
+
+                <span> <!-- Światła -->
+                    <img draggable="false" class="-hints" style="right:auto;left:180px;top:315px;" src="Data/Assets/left_hint.png">
+                    <img draggable="false" class="-hints" style="right:180px;left:auto;top:315px;" src="Data/Assets/right_hint.png">
+                    <img draggable="false" class="-hints" style="right:auto;left:560px;top:475px;" src="Data/Assets/desk_hint.png">
+
+                    <div id="-c_light"></div>
+                    <div class="-lights" style="left:110px;background-image: url('Data/Assets/left_light.png');" id="-l_light"></div>
+                    <div class="-lights" style="right:110px;background-image: url('Data/Assets/right_light.png');" id="-r_light"></div>
+                </span>
+
+                <!-- Tło -->
+                <img draggable="false" class="-office_dsk" src="Data/Assets/desk.png">
+                <img draggable="false" class="-plush" style="left:720px;" src="Data/Assets/halloween_plush.png">
+                <img draggable="false" class="-plush" style="right:520px;" src="Data/Assets/plush.png">
+                <img draggable="false" class="-decor" src="Data/Assets/halloween_decor.png">
+                <img draggable="false" class="-strings" src="Data/Assets/office_strings.png">
+                <img draggable="false" class="-office_bg" src="Data/Assets/office.png">
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="Data/variables.js"></script>
+    <script src="Data/loader.js" id="-loader"></script>
+</body>
+</html>

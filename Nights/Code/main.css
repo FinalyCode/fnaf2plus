@@ -1,0 +1,56 @@
+*
+{
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+body
+{
+    overflow: hidden;
+    text-align: center;
+}
+@font-face {
+    font-family: main;
+    src: url('../Data/Fonts/Hacked-KerX.ttf');
+}
+#-jumpscare
+{
+    position: absolute;
+    z-index: 7;
+    left: 0;
+}
+#-death
+{
+    position: absolute;
+    z-index: 7;
+    top: -250%;
+    left: 0;
+}
+#-death_overlay
+{
+    pointer-events: none;
+    position: absolute;
+    z-index: 7;
+    top: 0;
+    left: 0;
+    opacity: 0%;
+}
+#-game_over
+{
+    pointer-events: none;
+    position: absolute;
+    z-index: 7;
+    top: 0;
+    left: 0;
+    opacity: 0%;
+}
+#-fade_in
+{
+    height: 100%;
+    z-index: 10;
+    opacity: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}

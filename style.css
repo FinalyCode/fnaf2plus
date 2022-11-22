@@ -1,0 +1,135 @@
+@font-face {
+    font-family: main;
+    src: url('OCRAM.ttf');
+}
+body
+{
+    background-image: url('Assets/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    text-align: center;
+}
+#-container
+{
+    margin: 20px auto;
+    width: 90%;
+    height: 880px;
+}
+h2
+{
+    font-size: 90px;
+}
+#-left
+{
+    float: left;
+    width: 50%;
+    height: 100%;
+}
+#-right
+{
+    float: right;
+    width: 50%;
+    height: 100%;
+}
+img[src="Assets/logo.png"]
+{
+    margin: 30px 0 -10px 0;
+    height: 300px;
+}
+img[src="Assets/author.png"]
+{
+    height: 100px;
+}
+h1
+{
+    font-size: 50px;
+}
+div > img
+{
+    margin-top: -5px;
+    position: relative;
+    top: 18px;
+    height: 60px;
+}
+img
+{
+    height: 30px;
+}
+#-overlay
+{
+    height: 100%;
+    z-index: 10;
+    opacity: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+img[name='selection']
+{
+    margin-bottom: 50px;
+    height: 125px;
+    border: solid 5px black;
+    outline: solid 3px white;
+}
+img[name='selection_n']
+{
+    margin-bottom: 50px;
+    height: 125px;
+    opacity: 30%;
+    filter: grayscale(100%);
+}
+a
+{
+    color: red;
+    text-decoration: none;
+}
+a:visited
+{
+    color: red;
+    text-decoration: none;
+}
+a:hover
+{
+    color: white;
+    text-decoration: none;
+}
+a:active
+{
+    color: red;
+    text-decoration: none;
+}
+a[name='main']
+{
+    color: #C1132D;
+    font-size: 40px;
+    text-decoration: none;
+}
+a[name='main']:visited
+{
+    color: #C1132D;
+    text-decoration: none;
+}
+a[name='main']:hover
+{
+    color: white;
+    text-decoration: none;
+}
+a[name='main']:active
+{
+    color: #C1132D;
+    text-decoration: none;
+}
+*
+{
+    color: white;
+    font: 30px main;
+}
+hr
+{
+    color: white;
+    background-color: white;
+    width: 30%;
+    height: 3px;
+}

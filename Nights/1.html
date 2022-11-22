@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>FNaF 2 plus - Night 1 Info</title>
+    <link rel="icon" href="Assets/icon.png">
+</head>
+<body style="background-color: black;background-image: none;" onload="fadeIn()">
+
+    <img draggable="false" src="../Assets/fade.png" id="-overlay">
+
+    <div id="-container">
+        
+        <div id="-left">
+    
+            <h2>>> NIGHT 1</h2>
+
+            <h1> 
+                basic tutorial night. survive till 6 am<br>
+                difficulty: <font style="color:rgb(28, 227, 28);font-size: 50px;">easy</font>
+            </h1>
+
+            <hr><br><br>
+
+            <a href="#" onclick="fadeOut();" name="main">>> Play &#60;&#60;</a><br><br><br>
+
+            <a href="../select.html" name="main"> &#60;- back</a><br><br>
+
+        </div>
+
+        <div id="-right">
+    
+            <h2>FOES &#60;&#60;</h2>
+
+            <img name="selection" src="../Assets/tf.png">
+            <img name="selection" src="../Assets/tb.png">
+            <img name="selection" src="../Assets/tc.png">
+            <img name="selection_n" src="../Assets/mgl.png">
+            <img name="selection_n" src="../Assets/bb.png">
+            <img name="selection_n" src="../Assets/wf.png">
+            <img name="selection_n" src="../Assets/wb.png">
+            <img name="selection_n" src="../Assets/wc.png">
+            <img name="selection_n" src="../Assets/wfx.png">
+            <img name="selection_n" src="../Assets/wgf.png">
+
+            <h1><font style="color:red;">THIS NIGHT IS CURRENTLY SET TO INFINITE MODE WHICH MEANS YOU WON'T BE ABLE TO COMPLETE THE NIGHT</font></h1>
+
+
+        </div>
+
+    </div>
+
+    <script>
+
+    function fadeIn()
+    {
+        let fadeAnimation = 100;
+        const FADE_AWAY_SPEED = 1;
+        const FADE_LIMIT = 0;
+        const INTERVAL_FREQUENCY = 2;
+
+        setTimeout(() => {
+            let x = setInterval(() => {
+            
+                fadeAnimation-=FADE_AWAY_SPEED;
+                document.getElementById("-overlay").style.opacity = `${fadeAnimation}%`;
+                if(fadeAnimation <= FADE_LIMIT)
+                {
+                    clearInterval(x);
+                    fadeAnimation = FADE_LIMIT;
+                    document.getElementById("-overlay").style.opacity = `${fadeAnimation}%`;
+                    document.getElementById("-overlay").style.pointerEvents = 'none';
+                }
+            }, INTERVAL_FREQUENCY);
+        }, 1500);
+    }
+
+    function fadeOut()
+    {
+        let fadeAnimation = 0;
+        const FADE_AWAY_SPEED = 1;
+        const FADE_LIMIT = 100;
+        const INTERVAL_FREQUENCY = 2;
+
+        let x = setInterval(() => {
+        
+            fadeAnimation+=FADE_AWAY_SPEED;
+            document.getElementById("-overlay").style.opacity = `${fadeAnimation}%`;
+            if(fadeAnimation >= FADE_LIMIT)
+            {
+                clearInterval(x);
+                fadeAnimation = FADE_LIMIT;
+                document.getElementById("-overlay").style.opacity = `${fadeAnimation}%`;
+            }
+        }, INTERVAL_FREQUENCY);
+
+        setTimeout(() => {
+            window.location.replace("Night.html");
+        }, 2100);
+    }
+    </script>
+</body>
+</html>
